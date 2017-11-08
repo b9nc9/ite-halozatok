@@ -1,0 +1,13 @@
+dhcp-címkérés 4 lépése:
+1. kliens egy felderítéses üzenetet küld (dhcp discovery)
+a discovery egy szórásos üzenet
+erre egy dhcp kiszolgáló válaszol ha van, ha nincs akkor APIPA címet állít be magának
+2. a szerver egy dhcp offer üzenetet küld, ezelőtt még ping segítségével leellenőrzi hogy az létezik-e már a hálózaton, amit ki akar osztani
+a felajánlás már egyedi címzésű
+3. a gép egy dhcp requestet küld vissza a szervernek, ha megfelel neki a címe
+4. a szerver egy dhcp acknowledgement üzenettel nyugtázza
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+ha router esik közbe:
+ip helper-address [dhcp szerver ip]
+ez segít abban, hogy ne szórásként továbbítsa az üzenetet
